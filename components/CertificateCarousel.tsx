@@ -38,7 +38,7 @@ export default function CertificateCarousel() {
     const measure = () => { const track = trackRef.current; if (!track) return; loopWidth.current = track.scrollWidth / 3; if (!position.current) { position.current = loopWidth.current; render(); } };
     measure(); window.addEventListener('resize', measure);
     let frame = 0;
-    const tick = (time: number) => { const dt = Math.min((time - (last.current || time)) / 1000, .05); last.current = time; if (!dragging.current && open === null && time > pausedUntil.current) { velocity.current += (22 - velocity.current) * Math.min(1, dt * 2.5); } if (!dragging.current) { position.current += velocity.current * dt; velocity.current *= Math.pow(.16, dt); } normalize(); render(); frame = requestAnimationFrame(tick); };
+    const tick = (time: number) => { const dt = Math.min((time - (last.current || time)) / 1000, .05); last.current = time; if (!dragging.current && open === null && time > pausedUntil.current) { velocity.current += (34 - velocity.current) * Math.min(1, dt * 2.5); } if (!dragging.current) { position.current += velocity.current * dt; velocity.current *= Math.pow(.16, dt); } normalize(); render(); frame = requestAnimationFrame(tick); };
     frame = requestAnimationFrame(tick); return () => { cancelAnimationFrame(frame); window.removeEventListener('resize', measure); };
   }, [open]);
   useEffect(() => { const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') setOpen(null); }; window.addEventListener('keydown', escape); return () => window.removeEventListener('keydown', escape); }, []);
