@@ -5,6 +5,7 @@ import Image from 'next/image';
 import {useEffect, useRef, useState} from 'react';
 import CertificateCarousel from '@/components/CertificateCarousel';
 import EducationSection from '@/components/EducationSection';
+import MusicToggle from '@/components/MusicToggle';
 
 const skills=['Guest Experience','Hotel Operations','Food & Beverage','Event Coordination','Leadership','Customer Service','Business Foundations','Marketing'];
 const achievements=[['Devesse Award · Academics','Top 1 among third-year SAMCIS students, A.Y. 2025–2026, first semester.'],['Skills Olympics Champion','Champion, Wedding Cake Category · Department of Hospitality and Tourism Management, 2025.'],['Tea Concoction Silver Medal','Silver Medal Awardee · Hotel and Restaurant Association of Baguio, 2025.']];
@@ -26,4 +27,4 @@ export default function Home(){const [open,setOpen]=useState(false);const heroVi
  <Section id="gallery" kicker="07 — Perspective" title="Inspired by places with a point of view."><div className="gallery">{gallery.map((id,i)=><img loading="lazy" key={id} src={`https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=80`} alt={`Hospitality inspiration ${i+1}`}/>)}</div></Section>
  <section id="contact" className="contact"><p className="kicker">06 — Contact</p><h2>Let’s create something <em>remarkable.</em></h2><p>Open to meaningful conversations, opportunities, and collaborations in hospitality and service excellence.</p><p>ROJENNIELEEN B. BANIAGA</p><div className="actions"><span className="text-link"><MapPin size={17}/>180 Upper East Purok 1, Woodsgate, Camp 7, Baguio City</span><a className="text-link" href="tel:+639271643930"><Phone size={17}/>0927 164 3930</a><a className="text-link" href="mailto:rojbaniaga320@gmail.com"><Mail size={17}/>rojbaniaga320@gmail.com</a><a className="text-link" href="https://www.linkedin.com/in/rojennieleen-baniaga/" target="_blank" rel="noopener noreferrer"><Linkedin size={17}/>LinkedIn</a><a className="text-link" href="/resume/rojennieleen-baniaga-resume.pdf"><Download size={16}/> Resume</a></div></section>
  <footer><span>© {new Date().getFullYear()} Rojennieleen Baniaga</span><span>Designed with intention · Philippines</span></footer>
- </main>}
+ <MusicToggle/></main>}
